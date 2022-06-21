@@ -1,6 +1,6 @@
 <template>
   <ul id="result" class="user-list max-h-5">
-    <li class="flex p-5" v-for="band in filteredBands" :key="band.name">
+    <li class="flex p-5" v-for="band in bands" :key="band.name">
       <img
         class="h-12 w-12 object-contain rounded-full"
         :src="band.image"
@@ -51,6 +51,16 @@ export default {
       this.filteredBands = result;
       console.log("123");
     },
+
+    // compare(a, b) {
+    //   if (b.numPlays < a.numPlays) {
+    //     return -1;
+    //   }
+    //   if (b.numPlays > a.numPlays) {
+    //     return 1;
+    //   }
+    //   return 0;
+    // },
   },
   data() {
     return {
@@ -58,6 +68,11 @@ export default {
       filteredBands: [],
     };
   },
+  // computed: {
+  //   filterByPlays() {
+  //     return this.bands.sort(compare);
+  //   },
+  // },
 };
 </script>
 
